@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="background-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+    <div class="floating-shapes">
+        <div class="f-shape"></div>
+        <div class="f-shape"></div>
+        <div class="f-shape"></div>
+        <div class="f-shape"></div>
+        <div class="f-shape"></div>
+    </div>
+    <div class="container" id="adminLoginSection">
+        <div class="card login-card glassmorphism slide-up">
+            <h2>Admin Login</h2>
+            <form id="adminLoginForm">
+                <div class="input-group">
+                    <label>Username</label>
+                    <input type="text" id="adminUser" required>
+                </div>
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" id="adminPass" required>
+                </div>
+                <div id="adminLoginError" class="error-message"></div>
+                <button type="submit" class="btn btn-primary w-100">Login</button>
+            </form>
+            <div class="links mt-4 text-center">
+                <a href="index.html" class="link-secondary">Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="admin-dashboard hidden fade-in" id="adminDashboardSection">
+        <div class="nav-bar">
+            <h2>Admin Dashboard</h2>
+            <button id="adminLogoutBtn" class="btn btn-sm btn-outline">Logout</button>
+        </div>
+
+        <div class="container max-w-lg mt-4">
+            <div class="grid-container two-cols">
+                <div class="card glassmorphism">
+                    <h3>Actions</h3>
+                    <p class="mb-4 text-muted">Manage the election cycle</p>
+                    <button id="resetElectionBtn" class="btn btn-danger w-100">Reset Election</button>
+                </div>
+
+                <div class="card glassmorphism">
+                    <h3>Voter List</h3>
+                    <p class="mb-4 text-muted">Students who have voted</p>
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Reg Number</th>
+                                    <th>Time</th>
+                                </tr>
+                            </thead>
+                            <tbody id="votersTableBody">
+                                <!-- Voters injected here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card glassmorphism mt-4">
+                <h3>Live Election Results</h3>
+                <p class="mb-4 text-muted">Current vote distribution</p>
+                <div style="height: 300px; display: flex; align-items: center; justify-content: center;">
+                    <canvas id="adminResultsChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4 mb-4">
+                <a href="result.html" class="btn btn-primary">View Full Results Page</a>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            app.initAdmin();
+        });
+    </script>
+</body>
+</html>

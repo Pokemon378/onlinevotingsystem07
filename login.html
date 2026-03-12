@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voter Login</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+    <div class="floating-shapes">
+        <div class="f-shape"></div>
+        <div class="f-shape"></div>
+        <div class="f-shape"></div>
+        <div class="f-shape"></div>
+        <div class="f-shape"></div>
+    </div>
+    <div class="container slide-up">
+        <div class="card login-card glassmorphism">
+            <h2>Voter Login</h2>
+            <p style="color: var(--primary-hover); font-weight: 600; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Your vote, your voice - now online</p>
+            <p class="text-muted" style="margin-bottom: 1.5rem;">Please enter your details to proceed.</p>
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="studentName">Student Name</label>
+                    <input type="text" id="studentName" placeholder="e.g. John Doe" pattern="[A-Za-z\s]+" title="Only alphabets and spaces are allowed" required>
+                </div>
+                <div class="input-group">
+                    <label for="registerNumber">Register Number (8 Digits Only)</label>
+                    <input type="text" id="registerNumber" placeholder="e.g. 12345678" pattern="[0-9]{8}" maxlength="8" title="Register number must be exactly 8 digits" required>
+                </div>
+                
+                <div id="loginError" class="error-message"></div>
+                
+                <button type="submit" class="btn btn-primary w-100">Login to Vote</button>
+            </form>
+            <div class="links mt-4">
+                <a href="admin.html" class="link-secondary">Admin Login</a>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

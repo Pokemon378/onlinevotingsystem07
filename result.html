@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Election Results</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <div class="background-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+    <div class="floating-shapes">
+        <div class="f-shape"></div>
+        <div class="f-shape"></div>
+        <div class="f-shape"></div>
+        <div class="f-shape"></div>
+        <div class="f-shape"></div>
+    </div>
+    <div class="nav-bar">
+        <h2>Live Results</h2>
+        <a href="index.html" class="btn btn-sm btn-primary">Home</a>
+    </div>
+
+    <div class="container slide-up">
+        
+        <div class="stats-row mb-4">
+            <div class="stat-box glassmorphism">
+                <h3>Total Votes</h3>
+                <p id="totalVotes" class="stat-number">0</p>
+            </div>
+            <div class="stat-box winner-highlight glassmorphism">
+                <h3>🏆 Current Leader</h3>
+                <p id="winnerName" class="stat-number">TBD</p>
+            </div>
+        </div>
+
+        <div class="card results-card glassmorphism">
+            <canvas id="resultsChart"></canvas>
+        </div>
+
+        <div class="text-center mt-4">
+            <div id="detailedResults" class="results-list">
+                <!-- Detailed percentages loaded here -->
+            </div>
+        </div>
+
+    </div>
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            app.renderResults();
+        });
+    </script>
+</body>
+</html>

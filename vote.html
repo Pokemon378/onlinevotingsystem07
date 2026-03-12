@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote for Candidate</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+    <div class="floating-shapes">
+        <div class="f-shape"></div>
+        <div class="f-shape"></div>
+        <div class="f-shape"></div>
+        <div class="f-shape"></div>
+        <div class="f-shape"></div>
+    </div>
+    <div class="user-info-bar">
+        Welcome, <span id="displayUserName">Student</span>
+        <button id="logoutBtn" class="btn btn-sm btn-outline">Logout</button>
+    </div>
+
+    <div class="container fade-in">
+        <h2 class="text-center mb-4">Select Your Candidate</h2>
+        
+        <div id="candidatesList" class="grid-container">
+            <!-- Candidate cards injected here via JS -->
+        </div>
+
+        <div id="voteConfirmation" class="hidden text-center success-box mt-4">
+            <h3>✅ Your vote has been recorded successfully!</h3>
+            <p>Redirecting to results...</p>
+        </div>
+    </div>
+    
+    <script src="js/script.js"></script>
+    <script>
+        // Check if user is logged in
+        document.addEventListener('DOMContentLoaded', () => {
+            app.checkAuth();
+            app.renderCandidates();
+        });
+    </script>
+</body>
+</html>
